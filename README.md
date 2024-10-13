@@ -14,7 +14,6 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://ww
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -33,16 +32,16 @@ Users should be able to:
 
 ### Screenshots
 
-|             Mobile designed at 375px:              |             Desktop designed at 1440px:             |
-| :------------------------------------------------: | :-------------------------------------------------: |
-|  ![](./screenshots/screenshot-mobile-rating.png)   |  ![](./screenshots/screenshot-desktop-rating.png)   |
-|                Mobile (thank you):                 |                Desktop (thank you):                 |
-| ![](./screenshots/screenshot-mobile-thank-you.png) | ![](./screenshots/screenshot-desktop-thank-you.png) |
+|             Mobile designed at 375px:              |             Tablet designed at 768px:              |             Desktop designed at 1440px:             |
+| :------------------------------------------------: | :------------------------------------------------: | :-------------------------------------------------: |
+|      ![](./screenshots/screenshot-mobile.png)      |      ![](./screenshots/screenshot-tablet.png)      |      ![](./screenshots/screenshot-desktop.png)      |
+|                Mobile (completed):                 |                Tablet (completed):                 |                Desktop (completed):                 |
+| ![](./screenshots/screenshot-mobile-completed.png) | ![](./screenshots/screenshot-tablet-completed.png) | ![](./screenshots/screenshot-desktop-completed.png) |
 
 ### Links
 
-- Solution URL: [https://github.com/elisilk/interactive-rating-component](https://github.com/elisilk/interactive-rating-component)
-- Live Site URL: [https://elisilk.github.io/interactive-rating-component/](https://elisilk.github.io/interactive-rating-component/)
+- Solution URL: [https://github.com/elisilk/contact-form-main](https://github.com/elisilk/contact-form-main)
+- Live Site URL: [https://elisilk.github.io/contact-form-main/](https://elisilk.github.io/contact-form-main/)
 
 ## My process
 
@@ -61,7 +60,7 @@ Users should be able to:
 - [Basic native form controls](https://developer.mozilla.org/en-US/docs/Learn/Forms/Basic_native_form_controls)
 - [HTML attribute: autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)
 - [`color-mix()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) - I learned how to mix two colors. Super cool! Used on the color for the button hover state.
-- [`position: fixed`] - Positions the success modal relative to the viewport.
+- [`position: fixed`](https://developer.mozilla.org/en-US/docs/Web/CSS/position#fixed) - Positions the success modal relative to the viewport.
 
 ### Continued development
 
