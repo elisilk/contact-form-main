@@ -1,0 +1,422 @@
+@font-face {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 400, 700;
+  src: url(assets/fonts/Karla-VariableFont_wght.ttf) format("truetype");
+}
+
+/* -- Custom properties -- */
+
+:root {
+  /* Colors */
+  --clr-green-200: hsl(148, 38%, 91%); /* Green 200 (lighter) */
+  --clr-green-600: hsl(169, 82%, 27%); /* Green 600 (medium) */
+  --clr-red: hsl(0, 66%, 54%); /* Red */
+  --clr-white: hsl(0, 0%, 100%); /* White */
+  --clr-grey-500: hsl(186, 15%, 59%); /* Grey 500 (medium) */
+  --clr-grey-900: hsl(187, 24%, 22%); /* Grey 900 (darker) */
+
+  /* Typography */
+  --ff-sans: "Karla", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* Fluid typography */
+  /* Mobile (m) 25rem (400px) -> Tablet (t) 45rem (720px) */
+
+  /* Heading - Bold / 32px / 100% lh / -1px ls */
+  /* Body MD - Bold or Regular / 18px / 150% lh / 0px ls */
+  /* Body SM - Regular / 16px / 150% lh / 0px ls */
+  --fs-heading: 2rem;
+  --fs-body-md: 1.125rem;
+  --fs-body-sm: 1rem;
+
+  --lh-heading: 100%;
+  --lh-body: 150%;
+
+  --ls-heading: -1px;
+}
+
+/* -- Global styling -- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* -- Layout components -- */
+
+body {
+  font-family: var(--ff-sans);
+  color: var(--clr-grey-900);
+  background-color: var(--clr-green-200);
+
+  min-height: 100vb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem
+    clamp(1rem, -0.7968750000000002rem + 7.187500000000001vw, 2.4375rem); /* (m) 16px -> (t) 39px */
+}
+
+main {
+  width: 100%;
+  max-width: 46rem; /* 736px */
+  background-color: var(--clr-white);
+  padding: clamp(1.5rem, 0.25rem + 5vw, 2.5rem); /* (m) 24px -> (t) 40px */
+  border-radius: 1rem; /* 16px */
+
+  display: grid;
+  gap: 2rem; /* 32px */
+}
+
+/* -- Two Col Layout -- */
+
+.two-col {
+  display: grid;
+  grid-gap: 1rem;
+  align-items: start;
+}
+
+@supports (width: min(250px, 100%)) {
+  .two-col {
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  }
+}
+
+.side-by-side {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* -- Headings -- */
+
+h2 {
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-heading);
+}
+
+/* -- All Form Controls -- */
+
+form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+label {
+  font-size: var(--fs-body-sm);
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+button {
+  display: block;
+  width: 100%;
+  border-radius: 0.5rem; /* 8px */
+  border: 1px solid var(--clr-grey-500);
+  color: var(--clr-grey-900);
+  font-family: inherit;
+  font-size: var(--fs-body-md);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  padding: 0.75rem 1.5rem; /* 12px 24px */
+}
+
+.control {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.control--more-spacing {
+  padding-block: 1rem;
+}
+
+.required {
+  color: var(--clr-green-600);
+}
+
+.error {
+  color: var(--clr-red);
+  font-size: var(--fs-body-sm);
+}
+
+/* -- Text Boxes & Textareas -- */
+
+input[type="text"]:not(:focus):not(:hover):invalid,
+input[type="email"]:not(:focus):not(:hover):invalid,
+textarea:not(:focus):not(:hover):invalid {
+  border: 1px solid var(--clr-grey-500);
+}
+
+/* Focus and hover state */
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover,
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+input[type="text"]:focus:invalid,
+input[type="email"]:focus:invalid,
+textarea:focus:invalid {
+  cursor: pointer;
+  border: 1px solid var(--clr-green-600);
+  outline: none;
+}
+
+/* Error state */
+input[type="text"].input-error:invalid,
+input[type="email"].input-error:invalid,
+textarea.input-error:invalid {
+  border: 1px solid var(--clr-red) !important;
+}
+
+/* -- Radio Buttons -- */
+
+fieldset {
+  border: none;
+  display: grid;
+  gap: 1rem;
+}
+
+legend {
+  margin-block-end: 1rem;
+}
+
+input[type="radio"] {
+  cursor: pointer;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+}
+
+label:has(input[type="radio"]) {
+  border-radius: 0.5rem; /* 8px */
+  border: 1px solid var(--clr-grey-500);
+  padding: 0.75rem 1.5rem; /* 12px 24px */
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+label:has(input[type="radio"]):hover {
+  border-color: var(--clr-green-600);
+}
+
+label:has(input[type="radio"])::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  height: 18px;
+  width: 18px;
+  margin: 3px;
+  border-radius: 50%;
+  border: 2px solid var(--clr-grey-500);
+}
+
+label:has(input[type="radio"]:checked) {
+  background-color: var(--clr-green-200);
+}
+
+label:has(input[type="radio"]:checked)::before {
+  border-color: var(--clr-green-600);
+  background-position: center;
+  background-image: url(assets/images/icon-radio-selected.svg);
+  background-repeat: no-repeat;
+}
+
+label:has(input[type="radio"]:focus) {
+  border-color: var(--clr-green-600);
+}
+
+label:has(input[type="radio"]:focus)::before {
+  outline: 1px solid var(--clr-grey-500);
+  outline-offset: 1px;
+}
+
+label:has(input[type="radio"]:focus:not(:focus-visible))::before {
+  outline: none;
+}
+
+/* -- Checkbox -- */
+
+input[type="checkbox"] {
+  cursor: pointer;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+}
+
+label:has(input[type="checkbox"]) {
+  padding-inline-end: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+label:has(input[type="checkbox"])::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  height: 18px;
+  width: 18px;
+  margin: 3px;
+  border: 2px solid var(--clr-grey-500);
+  border-radius: 2px;
+  flex-shrink: 0;
+  /* transition: all 0.1s linear; */
+}
+
+label:has(input[type="checkbox"]:checked)::before {
+  border-color: var(--clr-green-600);
+  background-position: center;
+  background-image: url(assets/images/icon-checkbox-check.svg);
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+}
+
+label:has(input[type="checkbox"]:focus)::before {
+  outline: 1px solid var(--clr-grey-500);
+  outline-offset: 1px;
+}
+
+label:has(input[type="checkbox"]:focus:not(:focus-visible))::before {
+  outline: none;
+}
+
+/* -- Textarea -- */
+
+textarea {
+  overflow: auto;
+  resize: none;
+  height: 15rem; /* 240px */
+}
+
+@media (width > 45rem) {
+  /* Tablet (t) 45rem (720px) */
+  textarea {
+    height: 8.25rem; /* 132px */
+  }
+}
+
+@media (width > 65rem) {
+  /* Desktop (d) 45rem (720px) */
+  textarea {
+    height: 6.5625rem; /* 105px */
+  }
+}
+
+/* -- Button -- */
+
+button {
+  cursor: pointer;
+  color: var(--clr-white);
+  background-color: var(--clr-green-600);
+  font-weight: var(--fw-bold);
+  padding: 1rem 2.5rem; /* 16px 40px */
+}
+
+button:hover {
+  background-color: color-mix(in srgb, #000000 50%, var(--clr-green-600));
+}
+
+button:focus {
+  outline: 1px solid var(--clr-grey-500);
+  outline-offset: 1px;
+}
+
+/* ----- Success ----- */
+
+.success {
+  --margin: 1.5rem;
+  width: calc(100vw - 2 * var(--margin));
+  max-width: 28.125rem; /* 450px */
+  background-color: var(--clr-grey-900);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: var(--margin); /* 24px */
+  padding: 1.5rem; /* 24px */
+  border-radius: 0.75rem; /* 12px */
+
+  display: grid;
+  gap: 0.5rem; /* 8px */
+}
+
+.success h2 {
+  color: var(--clr-white);
+  font-size: var(--fs-body-md);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.success h2::before {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url(assets/images/icon-success-check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.success p {
+  color: var(--clr-green-200);
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body);
+}
+
+/* ----- Utilities ----- */
+
+.hidden {
+  display: none;
+}
+
+/* ----- Visually hidden utility begin ----- */
+
+/* Source: https://www.scottohara.me/blog/2023/03/21/visually-hidden-hack.html */
+/* sometimes referred to as .sr-only */
+
+.visually-hidden:not(:focus):not(:active):not(:focus-within) {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* ----- Visually hidden utility end ----- */
+
+/* ----- LastPass issue begin ----- */
+
+/* Issue with the LastPass icon disrupting the grid layout for the form input fields. Not sure how to fix it more generally, but this solution does remove the icon from the layout and so works for now. Reference: https://stackoverflow.com/questions/50145270/hide-last-pass-icon-in-input-fields */
+
+div[data-lastpass-icon-root] {
+  display: none;
+}
+
+div[data-lastpass-root] {
+  display: none;
+}
+
+/* ----- LastPass issue end ----- */
