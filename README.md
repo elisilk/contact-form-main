@@ -61,18 +61,33 @@ Users should be able to:
 - [HTML attribute: autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)
 - [`color-mix()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix) - I learned how to mix two colors. Super cool! Used on the color for the button hover state.
 - [`position: fixed`](https://developer.mozilla.org/en-US/docs/Web/CSS/position#fixed) - Positions the success modal relative to the viewport.
+- [Inclusively Hiding & Styling Checkboxes and Radio Buttons](https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/) - I absolutely love this explanation of how to make inclusive checkboxes and radio buttons. I didn't follow the solution exactly, but definitely utilizie much of it.
+- [Form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation) - Form validation more generally is something I struggled with on this challenge. I feel like I get the general idea and was able to make it work. But there are still some funny things I'm trying to figure out and come up with better solutions for.
+  - [ValidityState](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState)
+  - [HTMLSelectElement: `checkValidity()` method](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/checkValidity)
+  - [Constraint validation](https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation)
+  - [HTML Input Validation with JavaScript](https://www.aleksandrhovhannisyan.com/blog/html-input-validation-without-a-form/)
+  - [When and how to choose HTML for form validation](https://blog.logrocket.com/when-how-to-choose-html-form-validation/)
+  - [Understanding Form Input Validation in HTML5 and JavaScript](https://www.ituonline.com/blogs/form-input-validation/)
+  - [Form Validation Using JavaScript’s Constraint Validation API](https://medium.com/stackanatomy/form-validation-using-javascripts-constraint-validation-api-fd4b70720288)
+- [How to Prevent Form Validation on Page Load & While Typing on Input Field (HTML Constraint Validation API)](https://usefulangle.com/post/244/html-form-prevent-validation-on-page-load) - Details like when to actually trigger the validation is one issue that I am still working through.
+- [Validation messages](https://www.accessibility-developer-guide.com/examples/forms/validation-messages/) - And then making sure the validation messages are accessible is another level that I am continuing to think through.
+- [Can the :not() pseudo-class have multiple arguments?](https://stackoverflow.com/questions/5684160/can-the-not-pseudo-class-have-multiple-arguments)
 
 ### Continued development
 
 Specific areas that the solution should be improved (known issues):
 
-- Should animate the showing and hiding of the success modal.
+- Animate the showing and hiding of the success modal.
 - Should be able to dismiss the success modal by pressing any key (or maybe just the escape key) or clicking somewhere.
 - When finalizing and submitting the form successfully from an input field that previously had an error, that input element continues to have an error even after form submission. The error should be cleared along with all the others.
+- The error messages don't seem to go away in the radio and checkboxes after a choice has been made (but before form submission).
+- The "Query Type \*" legend seems to break onto multiple lines when viewing in Safari on my iPhone.
 
 More general ideas I want to consider:
 
-- Hmm 🤔 ...
+- [`Window: clearTimeout() method`](https://developer.mozilla.org/en-US/docs/Web/API/Window/clearTimeout) - I want to learn how to use this method in the context of breaking out of a [`setTimeout()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout) early. Like, for example, if I keep the success modal open for a certain amount of time, but then can break out of that by hitting the `esc` key or clicking somewhere in the viewport.
+- [Event bubbling](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Event_bubbling) - In asking myself the question of ["blur vs focusout -- any real differences?"](https://stackoverflow.com/questions/8973532/blur-vs-focusout-any-real-differences), that got me wanting to learn much more about what is event bubbling, and how do DOM events work more generally. I feel like there is more here that I am not getting and would be worth delving into further.
 
 ### Useful resources
 
