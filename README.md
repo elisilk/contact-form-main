@@ -87,6 +87,11 @@ Specific areas that the solution should be improved (known issues):
 More general ideas I want to consider:
 
 - [`Window: clearTimeout() method`](https://developer.mozilla.org/en-US/docs/Web/API/Window/clearTimeout) - I want to learn how to use this method in the context of breaking out of a [`setTimeout()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout) early. Like, for example, if I keep the success modal open for a certain amount of time, but then can break out of that by hitting the `esc` key or clicking somewhere in the viewport.
+- Make sure that my custom radio buttons and checkboxes implementation is fully accessible checked against these resources:
+  - [One last time: custom styling radio buttons and checkboxes](https://www.scottohara.me/blog/2021/09/24/custom-radio-checkbox-again.html)
+  - [a11y_styled_form_controls](https://scottaohara.github.io/a11y_styled_form_controls/)
+- Should the success popup be implemented using [`<dialog>`: The Dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)? I think probably so. It seems more semantically appropriate than any kind of custom approach, and is [probably more accessible as result too](https://www.scottohara.me/blog/2023/01/26/use-the-dialog-element.html).
+- [Decide if there's any WIA-ARIA](https://www.frontendmentor.io/learning-paths/introduction-to-web-accessibility-mXu-9PHVsd/steps/670410d55832c087f2b07542/article/read) that I should be including in the solution. Maybe [landmark roles](https://developer.mozilla.org/en-US/blog/aria-accessibility-html-landmark-roles/)?
 - [Event bubbling](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Event_bubbling) - In asking myself the question of ["blur vs focusout -- any real differences?"](https://stackoverflow.com/questions/8973532/blur-vs-focusout-any-real-differences), that got me wanting to learn much more about what is event bubbling, and how do DOM events work more generally. I feel like there is more here that I am not getting and would be worth delving into further.
 
 ### Useful resources
